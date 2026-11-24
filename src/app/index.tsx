@@ -1,24 +1,35 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Homescreen() {
+export default function HomeScreen() {
   return (
-    <View style={style.container}>
-      <Text style={style.titulo}>Olá mundo!</Text>
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Primeiro Aplicativo!</Text>
+
+      <Text style={styles.subtitulo}>Desenvolvido com React Native</Text>
     </View>
   );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   titulo: {
-    color: "blue",
     fontSize: 30,
-    fontFamily: "Bold",
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#ff3ae5",
+  },
+
+  subtitulo: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#ffffff",
   },
 
   container: {
-    backgroundColor: "black",
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#000000",
+    backgroundImage: "linear-gradient(to right, #fd5ae7, #000000)",
   },
 });
