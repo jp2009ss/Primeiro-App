@@ -1,16 +1,17 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Servico() {
+type ServicoProps = {
+  titulo: string;
+  descricao: string;
+  preco: number;
+};
+
+export default function Servico({ titulo, descricao, preco }: ServicoProps) {
   return (
     <View style={styles.card}>
-      <Text style={styles.titulo}>BIDU</Text>
-
-      <Text style={styles.descricao}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam repellat
-        eaque reprehenderit placeat soluta, officia quasi necessitatibus. Alias
-        eum, sed saepe veniam dolorum veritatis totam, nemo reprehenderit
-        facilis repudiandae atque.
-      </Text>
+      <Text style={styles.titulo}>{titulo}</Text>
+      <Text style={styles.descricao}>{descricao}</Text>
+      <Text style={styles.preco}>Preço: R$ {preco.toFixed(2)}</Text>
     </View>
   );
 }
@@ -34,5 +35,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "#475569",
     lineHeight: 23,
+  },
+  preco: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#059669",
+    marginTop: 8,
   },
 });
